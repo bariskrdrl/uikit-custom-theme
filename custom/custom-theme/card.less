@@ -1,0 +1,266 @@
+//
+// Component: Card
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@card-body-padding-horizontal:                 @global-gutter;
+@card-body-padding-vertical:                   @global-gutter;
+
+@card-body-padding-horizontal-l:               @global-medium-gutter;
+@card-body-padding-vertical-l:                 @global-medium-gutter;
+
+@card-header-padding-horizontal:               @global-gutter;
+@card-header-padding-vertical:                 round(@global-gutter / 2);
+
+@card-header-padding-horizontal-l:             @global-medium-gutter;
+@card-header-padding-vertical-l:               round(@global-medium-gutter / 2);
+
+@card-footer-padding-horizontal:               @global-gutter;
+@card-footer-padding-vertical:                 (@global-gutter / 2);
+
+@card-footer-padding-horizontal-l:             @global-medium-gutter;
+@card-footer-padding-vertical-l:               round(@global-medium-gutter / 2);
+
+@card-title-font-size:                         @global-large-font-size;
+@card-title-line-height:                       1.4;
+
+@card-badge-top:                               @global-gutter;
+@card-badge-right:                             @card-badge-top;
+
+@card-hover-background:                        @global-muted-background;
+
+@card-default-background:                      @global-muted-background;
+@card-default-color:                           @global-color;
+@card-default-title-color:                     @global-emphasis-color;
+@card-default-hover-background:                darken(@card-default-background, 5%);
+
+@card-primary-background:                      @global-primary-background;
+@card-primary-color:                           @global-inverse-color;
+@card-primary-title-color:                     @card-primary-color;
+@card-primary-hover-background:                darken(@card-primary-background, 5%);
+@card-primary-color-mode:                      light;
+
+@card-secondary-background:                    @global-secondary-background;
+@card-secondary-color:                         @global-inverse-color;
+@card-secondary-title-color:                   @card-secondary-color;
+@card-secondary-hover-background:              darken(@card-secondary-background, 5%);
+@card-secondary-color-mode:                    light;
+
+@card-small-body-padding-horizontal:           @global-margin;
+@card-small-body-padding-vertical:             @global-margin;
+@card-small-header-padding-horizontal:         @global-margin;
+@card-small-header-padding-vertical:           round(@global-margin / 1.5);
+@card-small-footer-padding-horizontal:         @global-margin;
+@card-small-footer-padding-vertical:           round(@global-margin / 1.5);
+
+@card-large-body-padding-horizontal-l:         @global-large-gutter;
+@card-large-body-padding-vertical-l:           @global-large-gutter;
+@card-large-header-padding-horizontal-l:       @global-large-gutter;
+@card-large-header-padding-vertical-l:         round(@global-large-gutter / 2);
+@card-large-footer-padding-horizontal-l:       @global-large-gutter;
+@card-large-footer-padding-vertical-l:         round(@global-large-gutter / 2);
+
+
+//
+// New
+//
+
+@card-hover-box-shadow:                        @global-large-box-shadow;
+
+@card-default-box-shadow:                      @global-medium-box-shadow;
+@card-default-hover-box-shadow:                @global-large-box-shadow;
+
+@card-default-header-border-width:             @global-border-width;
+@card-default-header-border:                   @global-border;
+
+@card-default-footer-border-width:             @global-border-width;
+@card-default-footer-border:                   @global-border;
+
+@card-primary-box-shadow:                      @global-medium-box-shadow;
+@card-primary-hover-box-shadow:                @global-large-box-shadow;
+
+@card-secondary-box-shadow:                    @global-medium-box-shadow;
+@card-secondary-hover-box-shadow:              @global-large-box-shadow;
+
+
+// Component
+// ========================================================================
+
+.hook-card() { transition: box-shadow 0.1s ease-in-out; }
+
+
+// Sections
+// ========================================================================
+
+.hook-card-body() {}
+
+.hook-card-header() {}
+
+.hook-card-footer() {}
+
+
+// Media
+// ========================================================================
+
+.hook-card-media() {}
+
+.hook-card-media-top() {}
+
+.hook-card-media-bottom() {}
+
+.hook-card-media-left() {}
+
+.hook-card-media-right() {}
+
+
+// Title
+// ========================================================================
+
+.hook-card-title() {}
+
+
+// Badge
+// ========================================================================
+
+.hook-card-badge() {}
+
+
+// Hover modifier
+// ========================================================================
+
+.hook-card-hover() { box-shadow: @card-hover-box-shadow; }
+
+
+// Style modifiers
+// ========================================================================
+
+.hook-card-default() { box-shadow: @card-default-box-shadow; }
+
+.hook-card-default-title() {}
+
+.hook-card-default-hover() { box-shadow: @card-default-hover-box-shadow; }
+
+.hook-card-default-header() { border-bottom: @card-default-header-border-width solid @card-default-header-border; }
+
+.hook-card-default-footer() { border-top: @card-default-footer-border-width  solid @card-default-footer-border; }
+
+//
+// Primary
+//
+
+.hook-card-primary() { box-shadow: @card-primary-box-shadow; }
+
+.hook-card-primary-title() {}
+
+.hook-card-primary-hover() { box-shadow: @card-primary-hover-box-shadow; }
+
+//
+// Secondary
+//
+
+.hook-card-secondary() { box-shadow: @card-secondary-box-shadow; }
+
+.hook-card-secondary-title() {}
+
+.hook-card-secondary-hover() { box-shadow: @card-secondary-hover-box-shadow; }
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-card-misc() {
+
+    /*
+     * Default
+     */
+
+    .uk-card-body > .uk-nav-default {
+        margin-left: -@card-body-padding-horizontal;
+        margin-right: -@card-body-padding-horizontal;
+    }
+    .uk-card-body > .uk-nav-default:only-child {
+        margin-top: (-@card-body-padding-vertical + 15px);
+        margin-bottom: (-@card-body-padding-vertical + 15px);
+    }
+
+    .uk-card-body .uk-nav-default > li > a,
+    .uk-card-body .uk-nav-default .uk-nav-header,
+    .uk-card-body .uk-nav-default .uk-nav-divider {
+        padding-left: @card-body-padding-horizontal;
+        padding-right: @card-body-padding-horizontal;
+    }
+
+    .uk-card-body .uk-nav-default .uk-nav-sub { padding-left: @nav-sublist-deeper-padding-left + @card-body-padding-horizontal; }
+
+
+    /* Desktop and bigger */
+    @media (min-width: @breakpoint-large) {
+
+        .uk-card-body > .uk-nav-default {
+            margin-left: -@card-body-padding-horizontal-l;
+            margin-right: -@card-body-padding-horizontal-l;
+        }
+        .uk-card-body > .uk-nav-default:only-child {
+            margin-top: (-@card-body-padding-vertical-l + 15px);
+            margin-bottom: (-@card-body-padding-vertical-l + 15px);
+        }
+
+        .uk-card-body .uk-nav-default > li > a,
+        .uk-card-body .uk-nav-default .uk-nav-header,
+        .uk-card-body .uk-nav-default .uk-nav-divider {
+            padding-left: @card-body-padding-horizontal-l;
+            padding-right: @card-body-padding-horizontal-l;
+        }
+
+        .uk-card-body .uk-nav-default .uk-nav-sub { padding-left: @nav-sublist-deeper-padding-left + @card-body-padding-horizontal-l; }
+
+    }
+
+    /*
+     * Small
+     */
+
+    .uk-card-small > .uk-nav-default {
+        margin-left: -@card-small-body-padding-horizontal;
+        margin-right: -@card-small-body-padding-horizontal;
+    }
+    .uk-card-small > .uk-nav-default:only-child {
+        margin-top: (-@card-small-body-padding-vertical + 15px);
+        margin-bottom: (-@card-small-body-padding-vertical + 15px);
+    }
+
+    .uk-card-small .uk-nav-default > li > a,
+    .uk-card-small .uk-nav-default .uk-nav-header,
+    .uk-card-small .uk-nav-default .uk-nav-divider {
+        padding-left: @card-small-body-padding-horizontal;
+        padding-right: @card-small-body-padding-horizontal;
+    }
+
+    .uk-card-small .uk-nav-default .uk-nav-sub { padding-left: @nav-sublist-deeper-padding-left + @card-small-body-padding-horizontal; }
+
+    /*
+     * Large
+     */
+
+    /* Desktop and bigger */
+    @media (min-width: @breakpoint-large) {
+
+        .uk-card-large > .uk-nav-default { margin: 0; }
+        .uk-card-large > .uk-nav-default:only-child { margin: 0; }
+
+        .uk-card-large .uk-nav-default > li > a,
+        .uk-card-large .uk-nav-default .uk-nav-header,
+        .uk-card-large .uk-nav-default .uk-nav-divider {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .uk-card-large .uk-nav-default .uk-nav-sub { padding-left: @nav-sublist-deeper-padding-left; }
+
+    }
+
+}

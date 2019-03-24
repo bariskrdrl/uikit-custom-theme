@@ -1,0 +1,90 @@
+//
+// Component: Text
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@text-lead-font-size:                           @global-large-font-size;
+@text-lead-line-height:                         1.5;
+@text-lead-color:                               @global-emphasis-color;
+
+@text-meta-font-size:                           @global-small-font-size;
+@text-meta-line-height:                         1.4;
+@text-meta-color:                               @global-muted-color;
+
+@text-small-font-size:                          @global-small-font-size;
+@text-small-line-height:                        1.5;
+
+@text-large-font-size:                          @global-large-font-size;
+@text-large-line-height:                        1.5;
+
+@text-bold-font-weight:                         bolder;
+
+@text-muted-color:                              @global-muted-color;
+@text-emphasis-color:                           @global-emphasis-color;
+@text-primary-color:                            @global-primary-background;
+@text-success-color:                            @global-success-background;
+@text-warning-color:                            @global-warning-background;
+@text-danger-color:                             @global-danger-background;
+
+@text-background-color:                         @global-primary-background;
+
+//
+// New
+//
+
+@text-meta-link-color:                          @text-meta-color;
+@text-meta-link-hover-color:                    @global-color;
+
+
+// Style modifiers
+// ========================================================================
+
+.hook-text-lead() {}
+
+.hook-text-meta() {
+
+    a { color: @text-meta-link-color; }
+
+    a:hover {
+        color: @text-meta-link-hover-color;
+        text-decoration: none;
+    }
+
+}
+
+
+// Size modifiers
+// ========================================================================
+
+.hook-text-small() {}
+
+.hook-text-large() {}
+
+
+// Background modifier
+// ========================================================================
+
+.hook-text-background() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-text-misc() {}
+
+
+// Inverse
+// ========================================================================
+
+@inverse-text-lead-color:                      @inverse-global-color;
+@inverse-text-meta-color:                      @inverse-global-muted-color;
+@inverse-text-muted-color:                     @inverse-global-muted-color;
+@inverse-text-emphasis-color:                  @inverse-global-emphasis-color;
+@inverse-text-primary-color:                   @inverse-global-color;
+
+.hook-inverse-text-lead() {}
+.hook-inverse-text-meta() {}

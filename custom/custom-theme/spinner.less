@@ -1,0 +1,20 @@
+//
+// Component: Spinner
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@spinner-size:                                  30px;
+@spinner-stroke-width:                          1;
+@spinner-radius:                                floor((@spinner-size - @spinner-stroke-width) / 2); // Minus stroke width to prevent overflow clipping
+@spinner-circumference:                         round(2 * 3.141 * @spinner-radius);
+@spinner-duration:                              1.4s;
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-spinner-misc() {}

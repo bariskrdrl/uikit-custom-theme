@@ -1,0 +1,112 @@
+//
+// Component: Table
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@table-margin-vertical:                         @global-margin;
+
+@table-cell-padding-vertical:                   16px;
+@table-cell-padding-horizontal:                 12px;
+
+@table-header-cell-font-size:                   @global-font-size;
+@table-header-cell-font-weight:                 bold;
+@table-header-cell-color:                       @global-color;
+
+@table-footer-font-size:                        @global-small-font-size;
+
+@table-caption-font-size:                       @global-small-font-size;
+@table-caption-color:                           @global-muted-color;
+
+@table-row-active-background:                   #ffd;
+
+@table-divider-border-width:                    @global-border-width;
+@table-divider-border:                          @global-border;
+
+@table-striped-row-background:                  @global-muted-background;
+
+@table-hover-row-background:                    @table-row-active-background;
+
+@table-small-cell-padding-vertical:             10px;
+@table-small-cell-padding-horizontal:           12px;
+
+@table-large-cell-padding-vertical:             22px;
+@table-large-cell-padding-horizontal:           12px;
+
+@table-expand-min-width:                        150px;
+
+//
+// New
+//
+
+@table-striped-border-width:                    @global-border-width;
+@table-striped-border:                          @global-border;
+
+
+// Component
+// ========================================================================
+
+.hook-table-header-cell() { text-transform: uppercase; }
+
+.hook-table-cell() {}
+
+.hook-table-footer() {  }
+
+.hook-table-caption() {}
+
+.hook-table-row-active() {}
+
+
+// Style modifiers
+// ========================================================================
+
+.hook-table-divider() {}
+
+.hook-table-striped() {
+    border-top: @table-striped-border-width solid @table-striped-border;
+    border-bottom: @table-striped-border-width solid @table-striped-border;
+}
+
+.hook-table-hover() {}
+
+
+// Size modifier
+// ========================================================================
+
+.hook-table-small() {}
+
+.hook-table-large() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-table-misc() {
+
+    .uk-table tbody tr { transition: background-color 0.1s linear; }
+
+}
+
+
+// Inverse
+// ========================================================================
+
+@inverse-table-header-cell-color:                       @inverse-global-color;
+@inverse-table-caption-color:                           @inverse-global-muted-color;
+@inverse-table-row-active-background:                   fadeout(@inverse-global-muted-background, 2%);
+@inverse-table-divider-border:                          @inverse-global-border;
+@inverse-table-striped-row-background:                  @inverse-global-muted-background;
+@inverse-table-hover-row-background:                    @inverse-table-row-active-background;
+
+.hook-inverse-table-header-cell() {}
+.hook-inverse-table-caption() {}
+.hook-inverse-table-row-active() {}
+.hook-inverse-table-divider() {}
+.hook-inverse-table-striped() {
+    border-top-color: @inverse-global-border;
+    border-bottom-color: @inverse-global-border;
+}
+.hook-inverse-table-hover() {}

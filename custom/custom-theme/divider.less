@@ -1,0 +1,74 @@
+//
+// Component: Divider
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@divider-margin-vertical:                       @global-margin;
+
+@divider-icon-width:                            50px;
+@divider-icon-height:                           20px;
+@divider-icon-color:                            @global-border;
+@divider-icon-line-top:                         50%;
+@divider-icon-line-width:                       100%;
+@divider-icon-line-border-width:                @global-border-width;
+@divider-icon-line-border:                      @global-border;
+
+@internal-divider-icon-image:                   "../../images/backgrounds/divider-icon.svg";
+
+@divider-small-width:                           100px;
+@divider-small-border-width:                    @global-border-width;
+@divider-small-border:                          @global-border;
+
+@divider-vertical-height:                       100px;
+@divider-vertical-border-width:                 @global-border-width;
+@divider-vertical-border:                       @global-border;
+
+
+// Icon
+// ========================================================================
+
+.hook-divider-icon() {}
+
+.hook-divider-icon-line() {}
+
+.hook-divider-icon-line-left() {}
+
+.hook-divider-icon-line-right() {}
+
+
+// Small
+// ========================================================================
+
+.hook-divider-small() {}
+
+
+// Vertical
+// ========================================================================
+
+.hook-divider-vertical() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-divider-misc() {}
+
+
+// Inverse
+// ========================================================================
+
+@inverse-divider-icon-color:                      @inverse-global-border;
+@inverse-divider-icon-line-border:                @inverse-global-border;
+@inverse-divider-small-border:                    @inverse-global-border;
+@inverse-divider-vertical-border:                 @inverse-global-border;
+
+.hook-inverse-divider-icon() {}
+.hook-inverse-divider-icon-line() {}
+
+.hook-inverse-divider-small() {}
+
+.hook-inverse-divider-vertical() {}

@@ -1,0 +1,38 @@
+//
+// Component: Close
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@close-color:                                   @global-muted-color;
+@close-hover-color:                             @global-color;
+
+
+// Component
+// ========================================================================
+
+.hook-close() {
+    transition: 0.1s ease-in-out;
+    transition-property: color, opacity;
+}
+
+.hook-close-hover() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-close-misc() {}
+
+
+// Inverse
+// ========================================================================
+
+@inverse-close-color:                           @inverse-global-muted-color;
+@inverse-close-hover-color:                     @inverse-global-color;
+
+.hook-inverse-close() {}
+.hook-inverse-close-hover() {}

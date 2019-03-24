@@ -1,0 +1,81 @@
+//
+// Component: List
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@list-margin-top:                               @global-small-margin;
+
+@list-nested-padding-left:                      @global-gutter;
+
+@list-divider-margin-top:                       @global-small-margin;
+@list-divider-border-width:                     @global-border-width;
+@list-divider-border:                           @global-border;
+
+@list-striped-padding-vertical:                 @global-small-margin;
+@list-striped-padding-horizontal:               @global-small-margin;
+@list-striped-background:                       @global-muted-background;
+
+@list-bullet-width:                             (@global-line-height * 1em);
+@list-bullet-height:                            @list-bullet-width;
+@list-bullet-margin-right:                      @global-small-margin;
+@list-bullet-icon-color:                        @global-color;
+
+@list-large-margin-top:                         @global-margin;
+@list-large-divider-margin-top:                 @global-margin;
+@list-large-striped-padding-vertical:           @global-margin;
+@list-large-striped-padding-horizontal:         @global-small-margin;
+
+@internal-list-bullet-image:                    "../../images/backgrounds/list-bullet.svg";
+
+//
+// New
+//
+
+@list-striped-border-width:                     @global-border-width;
+@list-striped-border:                           @global-border;
+
+
+// Style modifiers
+// ========================================================================
+
+.hook-list-divider() {}
+
+.hook-list-striped() {
+
+    &:nth-of-type(odd) {
+        border-top: @list-striped-border-width solid @list-striped-border;
+        border-bottom: @list-striped-border-width solid @list-striped-border;
+    }
+
+}
+
+.hook-list-bullet() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-list-misc() {}
+
+
+// Inverse
+// ========================================================================
+
+@inverse-list-divider-border:                     @inverse-global-border;
+@inverse-list-striped-background:                 @inverse-global-muted-background;
+@inverse-list-bullet-icon-color:                  @inverse-global-color;
+
+.hook-inverse-list-divider() {}
+.hook-inverse-list-striped() {
+
+    &:nth-of-type(odd) {
+        border-top-color: @inverse-global-border;
+        border-bottom-color: @inverse-global-border;
+    }
+
+}
+.hook-inverse-list-bullet() {}
