@@ -18,7 +18,7 @@ You have the following options to get UIkit:
 - Install with [yarn](https://yarnpkg.com/) to get all source files as they are available on Github: ```yarn add uikit```
 - Clone the repo to get all source files including build scripts: `git clone git://github.com/uikit/uikit.git`
 - Uikit-custom-theme is cloned into the UIkit. https://github.com/bariskrdrl/uikit-custom-theme.git
-
+- Change watch line package.json "watch": "watch-run -i -p \"**/*.less\" yarn node build/less",
 ---
 
 ## Examples Filex
