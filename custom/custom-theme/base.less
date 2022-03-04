@@ -38,7 +38,7 @@
 @base-heading-color:                            @global-emphasis-color;
 @base-heading-text-transform:                   none;
 @base-heading-margin-top:                       @global-medium-margin;
-@base-h1-font-size-m:                           @global-xxlarge-font-size;
+@base-h1-font-size-m:                           @global-2xlarge-font-size;
 @base-h1-font-size:                             @base-h1-font-size-m * 0.85;
 @base-h1-line-height:                           1.2;
 @base-h2-font-size-m:                           @global-xlarge-font-size;
@@ -71,6 +71,11 @@
 @base-pre-line-height:                          1.5;
 @base-pre-font-family:                          @base-code-font-family;
 @base-pre-color:                                @global-color;
+
+@base-focus-outline-width:                      2px;
+@base-focus-outline-style:                      dotted;
+@base-focus-outline:                            @global-emphasis-color;
+@base-focus-outline-offset:                     1px;
 
 @base-selection-background:                     #39f;
 @base-selection-color:                          @global-inverse-color;
@@ -187,6 +192,7 @@
 @inverse-base-em-color:                        @inverse-global-emphasis-color;
 @inverse-base-heading-color:                   @inverse-global-emphasis-color;
 @inverse-base-hr-border:                       @inverse-global-border;
+@inverse-base-focus-outline:                   @inverse-global-emphasis-color;
 
 .hook-inverse-base-link() {}
 .hook-inverse-base-link-hover() {}
