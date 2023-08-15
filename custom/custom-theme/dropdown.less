@@ -7,15 +7,29 @@
 // Variables
 // ========================================================================
 
-@dropdown-z-index:                              @global-z-index + 20;
+@dropdown-margin:                               @global-small-margin;
+@dropdown-viewport-margin:                      15px;
 @dropdown-min-width:                            200px;
 @dropdown-padding:                              15px;
 @dropdown-background:                           @global-muted-background;
 @dropdown-color:                                @global-color;
-@dropdown-margin:                               @global-small-margin;
+@dropdown-color-mode:                           none;
+@dropdown-focus-outline:                        @base-focus-outline;
+
+@dropdown-large-padding:                        40px;
+
+@dropdown-dropbar-padding-top:                  @dropdown-padding;
+@dropdown-dropbar-padding-bottom:               @dropdown-padding;
+@dropdown-dropbar-viewport-margin:              15px;
+@dropdown-dropbar-viewport-margin-s:            @global-gutter;
+@dropdown-dropbar-viewport-margin-m:            @global-medium-gutter;
+
+@dropdown-dropbar-large-padding-top:            @dropdown-large-padding;
+@dropdown-dropbar-large-padding-bottom:         @dropdown-dropbar-large-padding-top;
 
 @dropdown-nav-item-color:                       @global-muted-color;
 @dropdown-nav-item-hover-color:                 @global-color;
+@dropdown-nav-subtitle-font-size:               @global-small-font-size;
 @dropdown-nav-header-color:                     @global-emphasis-color;
 @dropdown-nav-divider-border-width:             @global-border-width;
 @dropdown-nav-divider-border:                   @global-border;
@@ -37,6 +51,14 @@
 .hook-dropdown() { box-shadow: @dropdown-box-shadow; }
 
 
+// Dropbar modifier
+// ========================================================================
+
+.hook-dropdown-dropbar() { box-shadow: none; }
+
+.hook-dropdown-dropbar-large() {}
+
+
 // Nav
 // ========================================================================
 
@@ -45,6 +67,8 @@
 .hook-dropdown-nav-item() {}
 
 .hook-dropdown-nav-item-hover() {}
+
+.hook-dropdown-nav-subtitle() {}
 
 .hook-dropdown-nav-header() {}
 
