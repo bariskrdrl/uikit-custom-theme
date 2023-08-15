@@ -1,0 +1,55 @@
+//
+// Component: Dropbar
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@dropbar-margin:                                0;
+@dropbar-padding-top:                           15px;
+@dropbar-padding-bottom:                        @dropbar-padding-top;
+@dropbar-padding-horizontal:                    15px;
+@dropbar-padding-horizontal-s:                  @global-gutter;
+@dropbar-padding-horizontal-m:                  @global-medium-gutter;
+@dropbar-background:                            @global-muted-background;
+@dropbar-color:                                 @global-color;
+@dropbar-color-mode:                            none;
+@dropbar-focus-outline:                         @base-focus-outline;
+
+@dropbar-large-padding-top:                     40px;
+@dropbar-large-padding-bottom:                  @dropbar-large-padding-top;
+
+//
+// New
+//
+
+@dropbar-top-box-shadow:                        0 12px 7px -6px rgba(0, 0, 0, 0.05);
+@dropbar-bottom-box-shadow:                     0 -12px 7px -6px rgba(0, 0, 0, 0.05);
+@dropbar-left-box-shadow:                       12px 0 7px -6px rgba(0, 0, 0, 0.05);
+@dropbar-right-box-shadow:                      -12px 0 7px -6px rgba(0, 0, 0, 0.05);
+
+
+// Component
+// ========================================================================
+
+.hook-dropbar() {}
+
+
+// Direction modifier
+// ========================================================================
+
+.hook-dropbar-top() { box-shadow: @dropbar-top-box-shadow; }
+
+.hook-dropbar-bottom() { box-shadow: @dropbar-bottom-box-shadow; }
+
+.hook-dropbar-left() { box-shadow: @dropbar-left-box-shadow; }
+
+.hook-dropbar-right() { box-shadow: @dropbar-right-box-shadow; }
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-dropbar-misc() {}
