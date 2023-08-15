@@ -25,11 +25,13 @@
 
 @form-small-height:                             @global-control-small-height;
 @form-small-padding-horizontal:                 8px;
+@form-small-padding-vertical:                   round(@form-small-padding-horizontal * 0.6);
 @form-small-line-height:                        @form-small-height;
 @form-small-font-size:                          @global-small-font-size;
 
 @form-large-height:                             @global-control-large-height;
 @form-large-padding-horizontal:                 12px;
+@form-large-padding-vertical:                   round(@form-large-padding-horizontal * 0.6);
 @form-large-line-height:                        @form-large-height;
 @form-large-font-size:                          @global-medium-font-size;
 
@@ -52,6 +54,8 @@
 @form-radio-size:                               16px;
 @form-radio-margin-top:                         -4px;
 @form-radio-background:                         darken(@global-muted-background, 5%);
+
+@form-radio-focus-background:                   darken(@form-radio-background, 5%);
 
 @form-radio-checked-background:                 @global-primary-background;
 @form-radio-checked-icon-color:                 @global-inverse-color;
@@ -185,6 +189,12 @@
 .hook-form-horizontal-label() {}
 
 
+// Icon
+// ========================================================================
+
+.hook-form-icon() {}
+
+
 // Miscellaneous
 // ========================================================================
 
@@ -207,10 +217,12 @@
 
 @inverse-form-radio-background:                darken(@inverse-global-muted-background, 5%);
 
+@inverse-form-radio-focus-background:          fadein(@inverse-form-radio-background, 5%);
+
 @inverse-form-radio-checked-background:        @inverse-global-primary-background;
 @inverse-form-radio-checked-icon-color:        @inverse-global-inverse-color;
 
-@inverse-form-radio-checked-focus-background:  darken(@inverse-global-primary-background, 10%);
+@inverse-form-radio-checked-focus-background:  fadein(@inverse-global-primary-background, 10%);
 
 @inverse-form-icon-color:                      @inverse-global-muted-color;
 @inverse-form-icon-hover-color:                @inverse-global-color;
@@ -225,3 +237,5 @@
 .hook-inverse-form-radio-checked-focus() {}
 
 .hook-inverse-form-label() { color: @inverse-form-label-color; }
+
+.hook-inverse-form-icon() {}
