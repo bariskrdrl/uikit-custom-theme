@@ -12,11 +12,11 @@
 
 @search-icon-color:                                 @global-muted-color;
 
-@search-default-width:                              180px;
+@search-default-width:                              240px;
 @search-default-height:                             @global-control-height;
-@search-default-padding-horizontal:                 6px;
+@search-default-padding-horizontal:                 10px;
 @search-default-background:                         @global-muted-background;
-@search-default-focus-background:                   @search-default-background;
+@search-default-focus-background:                   darken(@search-default-background, 5%);
 
 @search-default-icon-width:                         @global-control-height;
 @search-default-icon-padding:                       0;
@@ -47,6 +47,8 @@
 @search-default-border-width:                       @global-border-width;
 @search-default-border:                             @global-border;
 
+@search-default-focus-border:                       @global-primary-background;
+
 
 // Component
 // ========================================================================
@@ -54,10 +56,18 @@
 .hook-search-input() {}
 
 
+// Icon
+// ========================================================================
+
+.hook-search-icon() {}
+
+
 // Default modifiers
 // ========================================================================
 
 .hook-search-default-input() { border: @search-default-border-width solid @search-default-border; }
+
+.hook-search-default-input-focus() { border-color: @search-default-focus-border; }
 
 
 // Navbar modifiers
@@ -65,13 +75,15 @@
 
 .hook-search-navbar-input() {}
 
-.hook-search-default-input-focus() {}
+.hook-search-navbar-input-focus() {}
 
 
 // Large modifiers
 // ========================================================================
 
 .hook-search-large-input() {}
+
+.hook-search-large-input-focus() {}
 
 
 // Toggle
@@ -97,7 +109,7 @@
 @inverse-search-icon-color:                    @inverse-global-muted-color;
 
 @inverse-search-default-background:            @inverse-global-muted-background;
-@inverse-search-default-focus-background:      @inverse-search-default-background;
+@inverse-search-default-focus-background:      fadein(@inverse-search-default-background, 5%);
 
 @inverse-search-navbar-background:             transparent;
 
@@ -110,8 +122,10 @@
 .hook-inverse-search-default-input-focus() {}
 
 .hook-inverse-search-navbar-input() {}
+.hook-inverse-search-navbar-input-focus() {}
 
 .hook-inverse-search-large-input() {}
+.hook-inverse-search-large-input-focus() {}
 
 .hook-inverse-search-toggle() {}
 .hook-inverse-search-toggle-hover() {}
