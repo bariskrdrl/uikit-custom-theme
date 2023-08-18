@@ -8,7 +8,10 @@
 // ========================================================================
 
 @navbar-background:                             @global-muted-background;
+@navbar-gap:                                    0px; // Must have a unit because of `calc`
 @navbar-color-mode:                             none;
+
+@navbar-nav-gap:                                0px; // Must have a unit because of `calc`
 
 @navbar-nav-item-height:                        80px;
 @navbar-nav-item-padding-horizontal:            15px;
@@ -19,6 +22,8 @@
 @navbar-nav-item-onclick-color:                 @global-emphasis-color;
 @navbar-nav-item-active-color:                  @global-emphasis-color;
 
+@navbar-parent-icon-margin-left:                4px;
+
 @navbar-item-padding-horizontal:                15px;
 @navbar-item-color:                             @global-color;
 
@@ -27,22 +32,37 @@
 
 @navbar-subtitle-font-size:                     @global-small-font-size;
 
-@navbar-dropdown-z-index:                       @global-z-index + 20;
-@navbar-dropdown-width:                         200px;
 @navbar-dropdown-margin:                        0;
+@navbar-dropdown-shift-margin:                  0;
+@navbar-dropdown-viewport-margin:               15px;
+@navbar-dropdown-width:                         200px;
 @navbar-dropdown-padding:                       15px;
 @navbar-dropdown-background:                    @global-muted-background;
 @navbar-dropdown-color:                         @global-color;
+@navbar-dropdown-color-mode:                    none;
+@navbar-dropdown-focus-outline:                 @base-focus-outline;
 @navbar-dropdown-grid-gutter-horizontal:        @global-gutter;
 @navbar-dropdown-grid-gutter-vertical:          @navbar-dropdown-grid-gutter-horizontal;
 
-@navbar-dropdown-dropbar-margin-top:            0;
-@navbar-dropdown-dropbar-margin-bottom:         @navbar-dropdown-dropbar-margin-top;
-@navbar-dropdown-dropbar-padding-horizontal:    @navbar-nav-item-padding-horizontal;
+@navbar-dropdown-large-shift-margin:            0;
+@navbar-dropdown-large-padding:                 40px;
+
+@navbar-dropdown-dropbar-margin:                0;
+@navbar-dropdown-dropbar-shift-margin:          0;
+@navbar-dropdown-dropbar-padding-top:           @navbar-dropdown-padding;
+@navbar-dropdown-dropbar-padding-bottom:        @navbar-dropdown-dropbar-padding-top;
+@navbar-dropdown-dropbar-viewport-margin:       15px;
+@navbar-dropdown-dropbar-viewport-margin-s:     @global-gutter;
+@navbar-dropdown-dropbar-viewport-margin-m:     @global-medium-gutter;
+
+@navbar-dropdown-dropbar-large-shift-margin:    0;
+@navbar-dropdown-dropbar-large-padding-top:     @navbar-dropdown-large-padding;
+@navbar-dropdown-dropbar-large-padding-bottom:  @navbar-dropdown-dropbar-large-padding-top;
 
 @navbar-dropdown-nav-item-color:                @global-muted-color;
 @navbar-dropdown-nav-item-hover-color:          @global-color;
 @navbar-dropdown-nav-item-active-color:         @global-emphasis-color;
+@navbar-dropdown-nav-subtitle-font-size:        @global-small-font-size;
 @navbar-dropdown-nav-header-color:              @global-emphasis-color;
 @navbar-dropdown-nav-divider-border-width:      @global-border-width;
 @navbar-dropdown-nav-divider-border:            @global-border;
@@ -50,23 +70,18 @@
 @navbar-dropdown-nav-sublist-item-hover-color:  @global-color;
 @navbar-dropdown-nav-sublist-item-active-color: @global-emphasis-color;
 
-@navbar-dropbar-background:                     @navbar-dropdown-background;
-@navbar-dropbar-z-index:                        @global-z-index - 20;
-
 //
 // New
 //
+
+@navbar-gap-m:                                  30px;
+@navbar-nav-gap-m:                              30px;
 
 @navbar-nav-item-text-transform:                uppercase;
 
 @navbar-dropdown-nav-font-size:                 @global-small-font-size;
 
 @navbar-dropdown-box-shadow:                    0 5px 12px rgba(0,0,0,0.15);
-
-@navbar-dropbar-box-shadow:                     0 5px 7px rgba(0, 0, 0, 0.05);
-
-@navbar-dropdown-grid-divider-border-width:     @global-border-width;
-@navbar-dropdown-grid-divider-border:           @navbar-dropdown-nav-divider-border;
 
 
 // Component
@@ -124,6 +139,8 @@
 // Style modifiers
 // ========================================================================
 
+.hook-navbar-primary() {}
+
 .hook-navbar-transparent() {}
 
 .hook-navbar-sticky() {}
@@ -134,7 +151,11 @@
 
 .hook-navbar-dropdown() { box-shadow: @navbar-dropdown-box-shadow; }
 
+.hook-navbar-dropdown-large() {}
+
 .hook-navbar-dropdown-dropbar() { box-shadow: none; }
+
+.hook-navbar-dropdown-dropbar-large() {}
 
 
 // Dropdown nav
@@ -146,6 +167,8 @@
 
 .hook-navbar-dropdown-nav-item-hover() {}
 
+.hook-navbar-dropdown-nav-subtitle() {}
+
 .hook-navbar-dropdown-nav-header() {}
 
 .hook-navbar-dropdown-nav-divider() {}
@@ -156,47 +179,29 @@
 
 .hook-navbar-dropbar() {}
 
-.hook-navbar-dropbar-slide() { box-shadow: @navbar-dropbar-box-shadow; }
-
 
 // Miscellaneous
 // ========================================================================
 
 .hook-navbar-misc() {
 
-    /*
-     * Navbar
-     */
+    /* Tablet landscape and bigger */
+    @media (min-width: @breakpoint-medium) {
 
-    .uk-navbar-container > .uk-container .uk-navbar-left {
-        margin-left: -@navbar-nav-item-padding-horizontal;
-        margin-right: -@navbar-nav-item-padding-horizontal;
-    }
-    .uk-navbar-container > .uk-container .uk-navbar-right { margin-right: -@navbar-nav-item-padding-horizontal; }
+        .uk-navbar-left,
+        .uk-navbar-right,
+        [class*='uk-navbar-center'] { gap: @navbar-gap-m; }
 
-    /*
-     * Grid Divider
-     */
+        .uk-navbar-center-left { right:  ~'calc(100% + @{navbar-gap-m})'; }
+        .uk-navbar-center-right { left: ~'calc(100% + @{navbar-gap-m})'; }
 
-    .uk-navbar-dropdown-grid > * { position: relative; }
-
-    .uk-navbar-dropdown-grid > :not(.uk-first-column)::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: (@navbar-dropdown-grid-gutter-horizontal / 2);
-        border-left: @navbar-dropdown-grid-divider-border-width solid @navbar-dropdown-grid-divider-border;
     }
 
-    /* Vertical */
-    .uk-navbar-dropdown-grid.uk-grid-stack > .uk-grid-margin::before {
-        content: "";
-        position: absolute;
-        top: -(@navbar-dropdown-grid-gutter-vertical / 2);
-        left: @navbar-dropdown-grid-gutter-horizontal;
-        right: 0;
-        border-top: @navbar-dropdown-grid-divider-border-width solid @navbar-dropdown-grid-divider-border;
+    /* Tablet landscape and bigger */
+    @media (min-width: @breakpoint-medium) {
+
+        .uk-navbar-nav { gap: @navbar-nav-gap-m; }
+
     }
 
 }
