@@ -38,6 +38,8 @@
 @text-meta-link-color:                          @text-meta-color;
 @text-meta-link-hover-color:                    @global-color;
 
+@internal-text-background-color-gradient:         linear-gradient(90deg, @text-background-color 0%, spin(@text-background-color, 40%) 100%);
+
 
 // Style modifiers
 // ========================================================================
@@ -46,9 +48,9 @@
 
 .hook-text-meta() {
 
-    a { color: @text-meta-link-color; }
+    > a { color: @text-meta-link-color; }
 
-    a:hover {
+    > a:hover {
         color: @text-meta-link-hover-color;
         text-decoration: none;
     }
@@ -67,7 +69,7 @@
 // Background modifier
 // ========================================================================
 
-.hook-text-background() {}
+.hook-text-background() { background-image: @internal-text-background-color-gradient; }
 
 
 // Miscellaneous
@@ -83,7 +85,7 @@
 @inverse-text-meta-color:                      @inverse-global-muted-color;
 @inverse-text-muted-color:                     @inverse-global-muted-color;
 @inverse-text-emphasis-color:                  @inverse-global-emphasis-color;
-@inverse-text-primary-color:                   @inverse-global-color;
+@inverse-text-primary-color:                   @inverse-global-primary-background;
 @inverse-text-secondary-color:                 @inverse-global-primary-background;
 
 .hook-inverse-text-lead() {}
