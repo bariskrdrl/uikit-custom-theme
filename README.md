@@ -18,7 +18,6 @@ You have the following options to get UIkit:
 - Install with [yarn](https://yarnpkg.com/) to get all source files as they are available on Github: ```yarn add uikit```
 - Clone the repo to get all source files including build scripts: `git clone git://github.com/uikit/uikit.git`
 - Uikit-custom-theme is cloned into the UIkit. https://github.com/bariskrdrl/uikit-custom-theme.git
-- Change watch line package.json "watch": "watch-run -i -p \\"**/*.less\\" yarn node build/less",
 ---
 
 ## Examples Filex
@@ -50,11 +49,11 @@ You have the following options to get UIkit:
 
 To compile UIkit and your custom theme into CSS, run the yarn task compile
 
-Run once to install all dependencies ```yarn install```
+Run once to install all dependencies ```pnpm install```
 
-Compile all source files including your theme ```yarn compile```
+Compile all source files including your theme ```pnpm compile```
 
-Watch files and compile automatically everytime a file changes ```yarn watch```
+Watch files and compile automatically everytime a file changes ```pnpm watch```
 
 ---
 
