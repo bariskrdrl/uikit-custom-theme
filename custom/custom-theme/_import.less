@@ -41,7 +41,6 @@
 @import "drop.less"; // After: Card
 @import "dropbar.less";
 @import "dropnav.less"; // After: Dropbar
-@import "dropdown.less"; // After: Card
 @import "modal.less"; // After: Close
 @import "slideshow.less";
 @import "slider.less";
@@ -57,7 +56,10 @@
 // Toggle
 // Scroll
 
-@import "grid.less";
+@import "thumbnav.less";
+@import "iconnav.less";
+
+@import "grid.less"; // After: Thumbnav, Iconnav
 
 // Navs
 @import "nav.less";
@@ -68,9 +70,7 @@
 @import "tab.less";
 @import "slidenav.less"; // After: Icon
 @import "dotnav.less";
-@import "thumbnav.less";
-@import "iconnav.less";
-
+@import "dropdown.less"; // After: Card, Nav
 @import "lightbox.less"; // After: Close, Slidenav
 
 // Utilities
