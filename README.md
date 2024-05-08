@@ -14,9 +14,7 @@ I gathered all less variables and hooks in UIkit.
 
 You have the following options to get UIkit:
 
-- Install with [npm](https://npmjs.com) to get all source files as they are available on Github: ```npm install uikit```
-- Install with [yarn](https://yarnpkg.com/) to get all source files as they are available on Github: ```yarn add uikit```
-- Clone the repo to get all source files including build scripts: `git clone git://github.com/uikit/uikit.git`
+- Install with [pnpm](https://pnpm.io/) to get all source files as they are available on GitHub: ```pnpm add uikit```
 - Uikit-custom-theme is cloned into the UIkit. https://github.com/bariskrdrl/uikit-custom-theme.git
 ---
 
@@ -47,12 +45,9 @@ You have the following options to get UIkit:
 
 ## Compile
 
-To compile UIkit and your custom theme into CSS, run the yarn task compile
-
+To compile UIkit and your custom theme into CSS, run the pnpm task compile
 Run once to install all dependencies ```pnpm install```
-
 Compile all source files including your theme ```pnpm compile```
-
 Watch files and compile automatically everytime a file changes ```pnpm watch```
 
 ---
