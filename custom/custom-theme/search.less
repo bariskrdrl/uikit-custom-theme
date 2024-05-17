@@ -16,18 +16,27 @@
 @search-default-height:                             @global-control-height;
 @search-default-padding-horizontal:                 10px;
 @search-default-background:                         @global-muted-background;
-@search-default-focus-background:                   darken(@search-default-background, 5%);
+@search-default-focus-background:                   darken(@search-default-background, 2%);
 
 @search-default-icon-width:                         @global-control-height;
 @search-default-icon-padding:                       0;
 
-@search-navbar-width:                               400px;
-@search-navbar-height:                              40px;
-@search-navbar-background:                          transparent;
-@search-navbar-font-size:                           @global-large-font-size;
+@search-navbar-width:                               240px;
+@search-navbar-height:                              @global-control-height;
+@search-navbar-padding-horizontal:                  10px;
+@search-navbar-background:                          @global-background;
+@search-navbar-focus-background:                    darken(@search-navbar-background, 1%);
 
-@search-navbar-icon-width:                          40px;
+@search-navbar-icon-width:                          @global-control-height;
 @search-navbar-icon-padding:                        0;
+
+@search-medium-width:                               400px;
+@search-medium-height:                              40px;
+@search-medium-background:                          transparent;
+@search-medium-font-size:                           @global-large-font-size;
+
+@search-medium-icon-width:                          40px;
+@search-medium-icon-padding:                        0;
 
 @search-large-width:                                500px;
 @search-large-height:                               80px;
@@ -48,6 +57,11 @@
 @search-default-border:                             @global-border;
 
 @search-default-focus-border:                       @global-primary-background;
+
+@search-navbar-border-width:                        @global-border-width;
+@search-navbar-border:                              @global-border;
+
+@search-navbar-focus-border:                        @global-primary-background;
 
 
 // Component
@@ -73,9 +87,17 @@
 // Navbar modifiers
 // ========================================================================
 
-.hook-search-navbar-input() {}
+.hook-search-navbar-input() { border: @search-navbar-border-width solid @search-navbar-border; }
 
-.hook-search-navbar-input-focus() {}
+.hook-search-navbar-input-focus() { border-color: @search-navbar-focus-border; }
+
+
+// Medium modifiers
+// ========================================================================
+
+.hook-search-medium-input() {}
+
+.hook-search-medium-input-focus() {}
 
 
 // Large modifiers
@@ -111,7 +133,10 @@
 @inverse-search-default-background:            @inverse-global-muted-background;
 @inverse-search-default-focus-background:      fadein(@inverse-search-default-background, 5%);
 
-@inverse-search-navbar-background:             transparent;
+@inverse-search-navbar-background:             @inverse-global-muted-background;
+@inverse-search-navbar-focus-background:       fadein(@inverse-search-navbar-background, 5%);
+
+@inverse-search-medium-background:             transparent;
 
 @inverse-search-large-background:              transparent;
 
@@ -121,8 +146,11 @@
 .hook-inverse-search-default-input() { border-color: @inverse-global-border; }
 .hook-inverse-search-default-input-focus() {}
 
-.hook-inverse-search-navbar-input() {}
+.hook-inverse-search-navbar-input() { border-color: @inverse-global-border; }
 .hook-inverse-search-navbar-input-focus() {}
+
+.hook-inverse-search-medium-input() {}
+.hook-inverse-search-medium-input-focus() {}
 
 .hook-inverse-search-large-input() {}
 .hook-inverse-search-large-input-focus() {}
