@@ -31,6 +31,8 @@
 
 @text-background-color:                         @global-primary-background;
 
+@text-stroke-text-stroke:                       ~'calc(1.4px + 0.002em)';
+
 //
 // New
 //
@@ -38,7 +40,7 @@
 @text-meta-link-color:                          @text-meta-color;
 @text-meta-link-hover-color:                    @global-color;
 
-@internal-text-background-color-gradient:         linear-gradient(90deg, @text-background-color 0%, spin(@text-background-color, 40%) 100%);
+@internal-text-background-color-gradient:       linear-gradient(90deg, @text-background-color 0%, spin(@text-background-color, 40) 100%);
 
 
 // Style modifiers
